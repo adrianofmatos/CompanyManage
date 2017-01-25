@@ -2,25 +2,33 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.github</groupId>
-	<artifactId>company-manage</artifactId>
+	<groupId>com.adriano</groupId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<packaging>war</packaging>
 
-	<name>company-manage</name>
-	<description>Company management system</description>
+	<description>estudando JSF e PrimeFaces</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
+		<!-- Exportar para PDF <dependency> <groupId>com.lowagie</groupId> <artifactId>itext</artifactId> 
+			<version>2.1.7</version> </dependency> -->
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.15</version>
+			<scope>compile</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>org.jboss.weld.servlet</groupId>
 			<artifactId>weld-servlet</artifactId>
-			<version>2.4.1.Final</version>
+			<version>2.4.0.Final</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
@@ -47,22 +55,17 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>5.3.4.Final</version>
+			<version>5.3.2.Final</version>
 			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>5.2.6.Final</version>
+			<version>5.2.4.Final</version>
 			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>5.2.6.Final</version>
-			<scope>compile</scope>
+			<!-- <exclusions> <exclusion> <groupId>org.jboss.spec.javax.interceptor</groupId> 
+				<artifactId>jboss-interceptors-api_1.1_spec</artifactId> </exclusion> </exclusions> -->
 		</dependency>
 
 		<dependency>
@@ -78,7 +81,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.1</version>
+				<version>3.5.1</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
@@ -86,5 +89,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<artifactId>CompanyManage</artifactId>
+	<name>CompanyManage</name>
 </project>
