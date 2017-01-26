@@ -10,12 +10,51 @@
 <meta charset="UTF-8"/>
 <title>Gestão Empresas</title>
 
+<h:outputStylesheet library="estudo" name="estilo.css" />
+
+<f:metadata>
+	<f:viewAction action="#{gestaoEmpresasBean.todasEmpresas}" />
+</f:metadata>
+
 </h:head>
 
-<body>
+<h:body>
+	<header>
+		<h:graphicImage library="estudo" name="logo.png" />
+	</header>
+	
+	
+	<h2>Cadastro de Empresas</h2>
+	
+	<div id="conteudo">
+	
+		<p:dataTable value="#{gestaoEmpresasBean.listaEmpresas}"
+			var="empresa" emptyMessage="Nenhuma informação a ser exibida.">
+			
+			<p:column headerText="Razão Social">
+				<h:outputText value="#{empresa.razaoSocial}" />
+			</p:column>
+			
+			<p:column headerText="Nome Fantasia">
+				<h:outputText value="#{empresa.nomeFantasia}" />
+			</p:column>
+		
+			<p:column headerText="Tipo empresa">
+				<h:outputText value="#{empresa.tipo}" />
+			</p:column>
 
-	<h:outputText value="Olá!" />
+			<p:column headerText="Ramo Atividade">
+				<h:outputText value="#{empresa.ramoAtividade.descricao}" />
+			</p:column>
 
-</body>
+		</p:dataTable>
+	
+	</div>
+	
+	<footer>
+		Estudando "Jsf e Primefaces"
+	</footer>
+
+</h:body>
 
 </html>

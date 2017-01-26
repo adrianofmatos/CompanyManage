@@ -1,6 +1,7 @@
 package com.github.erp.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -49,6 +50,21 @@ public class Empresa implements Serializable {
 	@Enumerated(EnumType.STRING)
 	@Column(nullable=false, length=30)
 	private TipoEmpresa tipo;
+	
+	@Column(precision = 10, scale = 2)
+	private BigDecimal faturamento;
+
+	public BigDecimal getFaturamento() {
+		return faturamento;
+	}
+
+	public void setFaturamento(BigDecimal faturamento) {
+		this.faturamento = faturamento;
+	}
+
+	public TipoEmpresa getTipo() {
+		return tipo;
+	}
 	
 	public void setTipo(TipoEmpresa tipo) {
 		this.tipo = tipo;

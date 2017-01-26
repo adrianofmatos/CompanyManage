@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+ 	xmlns:h="http://xmlns.jcp.org/jsf/html"
+ 	xmlns:f="http://xmlns.jcp.org/jsf/core"
+ 	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+<meta charset="UTF-8"/>
+<title>Gestão Empresas</title>
+
+<h:outputStylesheet library="estudo" name="estilo.css" />
+
+</h:head>
+
+<h:body>
+	<header>
+		<h:graphicImage library="estudo" name="logo.png" />
+	</header>
+	
+	<div id="conteudo">
+		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Número: "/>
+				<h:outputText value="#{gestaoEmpresasBean.getNumero()}" />
+								
+				<h:outputLabel />
+				<h:commandButton value="Salvar" />
+				
+			</h:panelGrid>
+		</h:form>
+	</div>
+	
+	<footer>
+		Estudando "Jsf e Primefaces"
+	</footer>
+
+</h:body>
+
+</html>
